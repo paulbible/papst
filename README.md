@@ -2,7 +2,7 @@
 
 A tool for Chip-seq analysis.
 
-![](https://github.com/paulbible/papst/tree/master/tutorials/papst_screen.png)
+![screen shot](https://github.com/paulbible/papst/tree/master/tutorials/papst_screen.png)
 
 ## Post Peak-calling Analysis
 
