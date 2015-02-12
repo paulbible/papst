@@ -18,13 +18,13 @@ The main features of PAPST are:
 * Quickly and interactively analyze ChIP-Seq peaks from multiple experiments
 
 ## Getting Started
-The [tutorials folder](https://github.com/paulbible/papst/tree/master/tutorials) above contains detailed walkthroughs with images for both Mac and Windows. Test data is available in the data folder above.
+The [tutorials folder](/master/tutorials) above contains detailed walkthroughs with images for both Mac and Windows. Test data is available in the data folder above.
 
 ## Requirements
 The only requirement is Java 1.7. The lastest version of Java is available at http://java.com/en/download/.
 
 ## License
-PAPST is released into the public domain and free for any use. See DISCLAIMER.
+PAPST is released into the public domain and free for any use. See [DISCLAIMER](/master/DISCLAIMER).
 
 ## Releases
 The current version of PAPST is available under [releases](https://github.com/paulbible/papst/releases).
