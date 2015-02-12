@@ -15,17 +15,25 @@ The main features of PAPST are:
 * Genome agnostic analysis, supports all genomes available through UCSC Genome Browser
 * Quickly and interactively analyze ChIP-Seq peaks from multiple experiments
 
+## Getting Started
+The tutorials folder above contains detailed walkthroughs with images for both Mac and Windows. Test data is available in the data folder above.
+
 ## Requirements
 The only requirement is Java 1.7. The lastest version of Java is available at http://java.com/en/download/.
 
 ## License
-As a product of US government workers, PAPST is released into the public domain and free for any use. See DISCLAIMER.
+PAPST is released into the public domain and free for any use. See DISCLAIMER.
 
 ## Versions
 The current version is available under the releases tab above.
 
+## How to Cite
+Check back later.
+
 ## Acknowledgments
 This work was supported by the Intramural Research Program (IRP) and the Office of Science and Technology (OST) of the National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS) of the National Institutes of Health (NIH).
+
+PAPST used public domain images from https://openclipart.org/.
 
 
 
