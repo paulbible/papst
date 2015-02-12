@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Name: papst/database
+Sealed: true
+Name: papst/dialogs
+Sealed: true
+Name: papst/filters
+Sealed: true
+Name: papst/models
+Sealed: true
+Name: papst/parsers
+Sealed: true
+Name: papst/regions
+Sealed: true
+Name: papst/utility
+Sealed: true
+Name: papst/workers
+Sealed: true
+Name: papst
+Sealed: true
+Main-Class: papst/PapstController
+Application-Name: PAPST
+
