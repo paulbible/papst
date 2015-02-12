@@ -6,9 +6,9 @@ A tool for Chip-seq analysis.
 
 ## Post Peak-calling Analysis
 
-PAPST is a user friendly program for analysis of ChIP-Seq (chromatin immunoprecipitation followed by sequencing) experiments.   
+PAPST is a user friendly program for analysis of ChIP-Seq (chromatin immunoprecipitation followed by sequencing) experiments. PAPST allows users into interact the significant peaks called from ChIP-seq analysis. It allows powerful co-localization analysis of multiple peaks sets.   
 
-## Features
+### Features
 The main features of PAPST are:
 * Transcription Factor (TF) and Epigenetic Mark (EM) profile pattern search
 * Assignment of ChIP-seq peaks of known genes.
