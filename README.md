@@ -2,6 +2,8 @@
 
 A tool for Chip-seq analysis.
 
+![](https://github.com/paulbible/papst/tree/master/tutorials/papst_screen.png)
+
 ## Post Peak-calling Analysis
 
 PAPST is a user friendly program for analysis of ChIP-Seq (chromatin immunoprecipitation followed by sequencing) experiments.   
@@ -16,7 +18,7 @@ The main features of PAPST are:
 * Quickly and interactively analyze ChIP-Seq peaks from multiple experiments
 
 ## Getting Started
-The tutorials folder above contains detailed walkthroughs with images for both Mac and Windows. Test data is available in the data folder above.
+The [tutorials folder](https://github.com/paulbible/papst/tree/master/tutorials) above contains detailed walkthroughs with images for both Mac and Windows. Test data is available in the data folder above.
 
 ## Requirements
 The only requirement is Java 1.7. The lastest version of Java is available at http://java.com/en/download/.
@@ -24,8 +26,8 @@ The only requirement is Java 1.7. The lastest version of Java is available at ht
 ## License
 PAPST is released into the public domain and free for any use. See DISCLAIMER.
 
-## Versions
-The current version is available under the releases tab above.
+## Releases
+The current version of PAPST is available under [releases](https://github.com/paulbible/papst/releases).
 
 ## How to Cite
 Check back later.
