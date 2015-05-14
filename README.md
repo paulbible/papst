@@ -31,6 +31,7 @@ The current version of PAPST is available under [releases](https://github.com/pa
 
 ## How to Cite
 If you use PAPST in your research, please cite:
+
 [Bible PW, Kanno Y, Wei L, Brooks SR, O’Shea JJ, Morasso MI, Loganatharaj R, Sun HW. (2015) PAPST, a User Friendly and Powerful Java Platform for ChIP-Seq Peak Co-Localization Analysis and Beyond. PLoS ONE 10(5): e0127285. doi: 10.1371/journal.pone.0127285](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127285)
 
 ## Acknowledgments
