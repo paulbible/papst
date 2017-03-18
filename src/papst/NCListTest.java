@@ -1,3 +1,6 @@
+/**
+ * These tests were kindly supplied by github user gmungoc
+ */
 package papst;
 
 import static org.testng.Assert.assertEquals;
