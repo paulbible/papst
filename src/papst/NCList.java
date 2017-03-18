@@ -33,6 +33,7 @@ import java.util.Collections;
 import java.util.Vector;
 
 import papst.regions.Region;
+import papst.regions.SimpleRegion;
 
 public class NCList implements java.io.Serializable{
 
@@ -93,7 +94,6 @@ public class NCList implements java.io.Serializable{
 		int i = 0;
 		int k = items.size()-1;
 		
-		
 		while(i < k){
 			int j = (i+k)/2;
 			NCNode cNode = items.get(j); 
@@ -130,6 +130,70 @@ public class NCList implements java.io.Serializable{
 		return i;
 	}
 	
+	public int getLowerOverlapIndex(long coord){
+		int i = getOverlapIndex(coord);
+		int j = i;
+		for(; j >= 0; --j){
+			NCNode cNode = items.get(j);
+			if(!cNode.contains(coord)){
+				return j;
+			}
+		}
+		if(j >= 0){
+			return j;
+		}else{
+			return 0;
+		}
+	}
+	
+	public int getUpperOverlapIndex(long coord){
+		int i = getOverlapIndex(coord);
+		int j = i;
+		for(; j < items.size(); ++j){
+			NCNode cNode = items.get(j);
+			if(!cNode.contains(coord)){
+				return j;
+			}
+		}
+		if(j < items.size()){
+			return j;
+		}else{
+			return items.size() - 1;
+		}
+	}
+	
+	public int getLowerOverlapIndex(Region p){
+		int i = getOverlapIndex(p);
+		int j = i;
+		for(; j >= 0; --j){
+			NCNode cNode = items.get(j);
+			if(!cNode.overlaps(p)){
+				return j;
+			}
+		}
+		if(j >= 0){
+			return j;
+		}else{
+			return 0;
+		}
+	}
+	
+	public int getUpperOverlapIndex(Region p){
+		int i = getOverlapIndex(p);
+		int j = i;
+		for(; j < items.size(); ++j){
+			NCNode cNode = items.get(j);
+			if(!cNode.overlaps(p)){
+				return j;
+			}
+		}
+		if(j < items.size()){
+			return j;
+		}else{
+			return items.size() - 1;
+		}
+	}
+	
 	public Vector<Region> getRegions(){
 		Vector<Region> vec = new Vector<Region>();
 		
@@ -150,29 +214,17 @@ public class NCList implements java.io.Serializable{
 	
 	public Vector<Region> getRegionsInRange(long start,long end){
 		
-		int s = getOverlapIndex(start);
-		int e = getOverlapIndex(end);
+		Region p = new SimpleRegion(start, end);
 		
-		Vector<Region> vec = new Vector<Region>();
-		for(int i = s; i <= e; i ++){
-			NCNode cNode = items.get(i);
-			if(!cNode.overlaps(start,end)){
-				continue;
-			}
-			vec.add(cNode.interval);
-			if(cNode.containments != null && cNode.containments.size() > 0){
-				vec.addAll(cNode.containments.getRegions());
-			}
-		}
-		return vec;
+		return getRegionsInRange(p);
 	}
 	
 	public Vector<Region> getRegionsInRange(Region p){
 		long start = p.getStart();
 		long end = p.getEnd();
 	
-		int s = getOverlapIndex(start);
-		int e = getOverlapIndex(end);
+		int s = getLowerOverlapIndex(start);
+		int e = getUpperOverlapIndex(end);
 		
 		Vector<Region> vec = new Vector<Region>();
 		for(int i = s; i <= e; i ++){
@@ -180,9 +232,17 @@ public class NCList implements java.io.Serializable{
 			if(!cNode.overlaps(start,end)){
 				continue;
 			}
-			vec.add(cNode.interval);
+			if(p.overlaps(cNode.interval)){
+				vec.add(cNode.interval);
+			}
 			if(cNode.containments != null && cNode.containments.size() > 0){
-				vec.addAll(cNode.containments.getRegions());
+				Vector<Region> contained = cNode.containments.getRegions();
+				for(Region r: contained){
+					if(p.overlaps(r)){
+						vec.add(r);
+					}
+				}
+				//vec.addAll(cNode.containments.getRegions());
 			}
 		}
 		return vec;
@@ -212,8 +272,6 @@ public class NCList implements java.io.Serializable{
 	private Vector<NCNode> items;
 	private int size;
 	private int numRegions;
-	
-	
 	
 	public class NCNode  implements java.io.Serializable{
 		
